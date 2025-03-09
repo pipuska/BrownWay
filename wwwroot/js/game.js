@@ -38,8 +38,10 @@ let restartButton; // Кнопка "Начать сначала"
 let canCreateAsteroids = true; // Флаг для создания астероидов
 
 function preload() {
-    this.load.image('ship', 'assets/123123323.jpg');
-    this.load.image('asteroid', 'assets/asteroid.png');
+
+    this.load.image('ship', 'https://i.imgur.com/zsGWpNk.png');
+
+    this.load.image('asteroid', 'https://i.imgur.com/3G9kyJ2.png');
 }
 
 function create() {
@@ -57,7 +59,7 @@ function create() {
     // Текстовые объекты для отображения счета, времени и последнего счета
     scoreText = this.add.text(this.scale.width * 0.02, this.scale.height * 0.02, 'Score: 0', { fontSize: '14px', fill: '#fff' });
     timeText = this.add.text(this.scale.width * 0.02, this.scale.height * 0.06, 'Time: 0', { fontSize: '14px', fill: '#fff' });
-    BestScoreText = this.add.text(this.scale.width * 0.02, this.scale.height * 0.10, 'Best Score: ' + BestScore, { fontSize: '14px', fill: '#fff' });
+    BestScoreText = this.add.text(this.scale.width * 0.02, this.scale.height * 0.10, 'ЕБАНОЕ ДЕппОЬМО НАХУЙ: ' + BestScore, { fontSize: '14px', fill: '#fff' });
 
     this.physics.add.collider(ship, asteroids, hitAsteroid, null, this);
 
@@ -99,7 +101,7 @@ function createAsteroid() {
     asteroid.setCollideWorldBounds(true);
     asteroid.setBounce(1);
 
-    this.time.delayedCall(1000, createAsteroid, [], this);
+    this.time.delayedCall(300, createAsteroid, [], this);
 }
 
 function update() {
